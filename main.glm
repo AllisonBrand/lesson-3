@@ -46,7 +46,7 @@ object meter
         {
             name solar_10;
             parent inv_10;
-            // peak irradiance * area * efficiency
+            // peak irradiance * area * efficiency = max output power
             // 1000 Watt/m^2 * 92.903 m^2 * 0.135 = 12.542 kW (1 kW = 1 kVA)
             rated_power 13.0 kVA;
             area 1000 sf; // a.k.a 92.903 m^2
