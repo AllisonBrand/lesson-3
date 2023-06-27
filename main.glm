@@ -7,7 +7,7 @@
 module generators;
 object diesel_dg 
 {
-    parent node_8;
+    parent load_9;
     Gen_mode CONSTANTPQ;
     Gen_status ONLINE;
     Gen_type SYNCHRONOUS;
@@ -16,6 +16,8 @@ object diesel_dg
     stroke 2;
     speed 360 1/min;
     torque 680;
+    phases A;
+    power_out_A @load_9.constant_power_A;
 }
 
 // Task 2 - Add 4kW 100 sf solar panel on load 10 (tilt 45, efficiency 0.135, south facing, fixed) 
@@ -44,8 +46,10 @@ object meter
         {
             name solar_10;
             parent inv_10;
-            rated_power 4.0 kVA;
-            area 100 sf;
+            // peak irradiance * area * efficiency
+            // 1000 Watt/m^2 * 92.903 m^2 * 0.135 = 12.542 kW (1 kW = 1 kVA)
+            rated_power 13.0 kVA;
+            area 1000 sf; // a.k.a 92.903 m^2
             tilt_angle 45.0 deg;
             efficiency 13.5%;
             orientation_azimuth 180;
