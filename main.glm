@@ -17,7 +17,7 @@ object diesel_dg
     stroke 2;
     speed 360 1/min;
     torque 680;
-    phases 1; 
+    phases A; 
     power_out_A load_9.constant_power_A;
 }
 
