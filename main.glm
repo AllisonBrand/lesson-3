@@ -7,6 +7,7 @@
 module generators;
 object diesel_dg 
 {
+    parent node_8;
     parent load_9;
     Gen_mode CONSTANTPQ;
     Gen_status ONLINE;
